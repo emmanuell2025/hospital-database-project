@@ -5,10 +5,10 @@
 
     <ul>
       <li>
-        <a href="doctor_login.php"><strong>Doctor</strong></a> Login
+        <a href="/doctor/doctor_login.php"><strong>Doctor</strong></a> Login
       </li>
       <li>
-        <a href="patient_login.php"><strong>Patient</strong></a> Login
+        <a href="/patient/patient_login.php"><strong>Patient</strong></a> Login
       </li>
     </ul>
   </body>
