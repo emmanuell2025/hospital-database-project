@@ -1,11 +1,12 @@
 <?php
 class Database{
 
+mysql://bf7c7ff3d38152:38c4dba3@us-cdbr-iron-east-05.cleardb.net/heroku_1ba2fa6c7c2d2b6?reconnect=true
     // specify your own database credentials
-    private $host = "dbms.gswcm.net";
-    private $db_name = "Group5_Fall2019";
-    private $username = "";
-    private $password = "";
+    private $host = "us-cdbr-iron-east-05.cleardb.net";
+    private $db_name = "heroku_1ba2fa6c7c2d2b6";
+    private $username = "bf7c7ff3d38152";
+    private $password = "38c4dba3";
     public $conn;
 
     // get the database connection
