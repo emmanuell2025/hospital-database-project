@@ -5,20 +5,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hospital Database</title>
+    <title>Doctor Login</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <h1>Login Here</h1>
+    <h1>Select An Account</h1>
 
     <ul>
       <li>
-        <a href="doctor_login.php"><strong>Doctor</strong></a> Login
-      </li>
-      <li>
-        <a href="patient_login.php"><strong>Patient</strong></a> Login
+        <a href="../patient_list.php"><strong>Doctor 1</strong></a>
       </li>
     </ul>
   </body>
