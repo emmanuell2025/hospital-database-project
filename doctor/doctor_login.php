@@ -1,4 +1,4 @@
-<?php include "templates/header.php"; ?>
+<?php include "../templates/header.php"; ?>
   <body>
     <h1>Select An Account</h1>
 
@@ -9,4 +9,4 @@
     </ul>
   </body>
 </html>
-<?php include "templates/footer.php"; ?>
+<?php include "../templates/footer.php"; ?>
