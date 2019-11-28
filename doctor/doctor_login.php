@@ -1,6 +1,8 @@
 <?php include "../templates/header.php";
 require_once "../config.php";
-// $query = "SELECT doctorID from doctor";
+
+
+$query = "SELECT doctorID from doctor";
 $responce = mysqli_query($dbc, $query);
 if ($responce){
   echo '<table>';
@@ -12,15 +14,15 @@ if ($responce){
 }
 else{
   echo "Error with database";
-  echo mysqli__error($dbc);
+  echo mysqli_connect_error($dbc);
 }
 
-mysql_close($dbc);
+mysqli_close($dbc);
 
 
-// if (isset($_POST['submit'])){
-//   $doctorID=$_POST['doctorID'];
-// }
+if (isset($_POST['submit'])){
+  $User=$_POST['doctorID'];
+}
 ?>
   <body>
     <h1>Select An Account</h1>
