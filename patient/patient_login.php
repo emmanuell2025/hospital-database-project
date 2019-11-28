@@ -1,14 +1,12 @@
 <?php include "../templates/header.php";
 require_once "../config.php";
-$query = "SELECT MRN from patient";
+$query = "SELECT pMRN from patient";
 $responce = mysqli_query($dbc, $query);
 if ($responce){
-  echo '<table>';
-  while ($row = mysqli_fetch_array($responce)){
-    '<tr><td>' . $row['MRN'] . '</td>';
-    echo '</tr>';
-  }
-  echo '</table>';
+  while($row = mysqli_fetch_array($responce)) {
+    echo $row['pMRN'] . "\n"; // Print a single column data
+    // echo print_r($row);       // Print the entire row data
+}
 }
 else{
   echo "Error with database";
