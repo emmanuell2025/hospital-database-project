@@ -2,16 +2,12 @@
 require_once "../config.php";
 
 
-$query = "SELECT doctorID from doctor";
+$query = "SELECT drID from doctor";
 $responce = mysqli_query($dbc, $query);
 if ($responce){
-  echo '<table>';
-  while ($row = mysqli_fetch_array($responce)){
-    '<tr><td>' . $row['doctorID'] . '</td>';
-    echo '</tr>';
-  }
-  echo '</table>';
-}
+  while($row = mysqli_fetch_array($responce)) {
+    echo $row['drID'] . "\n";
+}}
 else{
   echo "Error with database";
   echo mysqli_connect_error($dbc);
@@ -21,7 +17,7 @@ mysqli_close($dbc);
 
 
 if (isset($_POST['submit'])){
-  $User=$_POST['doctorID'];
+  $drID=$_POST['doctorID'];
 }
 ?>
   <body>
