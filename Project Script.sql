@@ -103,3 +103,4 @@
      Primary Key (rxID),
      Foreign Key (drID) References DOCTOR (drID),
      Foreign Key (medID) References MEDICINE (medID));
+                                              
