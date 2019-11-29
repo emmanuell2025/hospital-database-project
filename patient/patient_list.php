@@ -1,9 +1,14 @@
-<?php include "../templates/header.php";
+<?php
+  session_start();
+
+  include "../templates/header.php";
   require_once "../config.php";
+
 
   $user = $_POST['doctorID'];
   $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient where drID = '$user'";
   $responce = mysqli_query($dbc, $query);
+
   if ($responce){
     echo '<table> <tr>
     <td>MRN</td>
@@ -17,7 +22,7 @@
         $row['pFName'] . '</td> <td>' .
         $row['pLName'] . '</td> <td>' .
         $row['pPhone'] . '</td> <td>' .
-        $row['pAge'] . '</td>';
+        $row['pAge'] . '</td><td> ';
         echo '</tr>';
       }
       echo '<table>';

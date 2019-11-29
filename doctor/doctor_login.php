@@ -1,9 +1,15 @@
-<?php include "../templates/header.php";
-require_once "../config.php";
+<?php
 
+session_start();
+
+include "../templates/header.php";
+require_once "../config.php";
 
 $query = "SELECT drID from doctor";
 $responce = mysqli_query($dbc, $query);
+
+$_SESSION["loginID"] = "doctor";
+
 if ($responce){
   while($row = mysqli_fetch_array($responce)) {
     echo $row['drID'] . "\n";
