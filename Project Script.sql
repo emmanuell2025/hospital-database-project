@@ -99,5 +99,7 @@
      pMRN Integer Not Null,
      drID varChar(20) NOT NULL,
      rxCost decimal(8,2) NOT NULL,
+     medID VarChar(20) NOT NULL,
      Primary Key (rxID),
-     Foreign Key (drID) References DOCTOR (drID));
+     Foreign Key (drID) References DOCTOR (drID),
+     Foreign Key (medID) References MEDICINE (medID));
