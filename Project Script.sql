@@ -1,4 +1,6 @@
-     create table RECEPTION (
+    SET FOREIGN_KEY_CHECKS=0;
+    
+    create table RECEPTION (
      ReceptID Integer Not Null Unique,
      ReceptDept VarChar(20) Not Null,
      ReceptLoc VarChar(20) Not Null,
@@ -77,8 +79,10 @@
      apDate Date NOT NULL,
      apTime Time NOT NULL,
      pMRN Integer Not Null,
+     drID varChar(20) NOT NULL,
      Primary Key (apID),
      Foreign Key (DeptID) References DEPARTMENT (DeptID),
+     Foreign Key (drID) References DOCTOR (drID),
      Foreign Key (procID) References PROC (procID),
      Foreign Key (roomNum) References ROOM (roomNum),
      Foreign Key (pMRN) References PATIENT (pMRN));
@@ -104,3 +108,4 @@
      Foreign Key (drID) References DOCTOR (drID),
      Foreign Key (medID) References MEDICINE (medID));
                                               
+     SET FOREIGN_KEY_CHECKS=1
