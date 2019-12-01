@@ -2,7 +2,18 @@
   include "../templates/header.php";
 
   require_once "../config.php";
-  $MRN = $_POST["MRN"];
+
+  session_start();
+
+  if (isset($_POST["MRN"])){
+    $MRN = $_POST["MRN"];
+  }
+  else if (isset($_GET["MRN"])){
+    $MRN = $_GET["MRN"];
+  }
+  else {
+    echo "Error MRN Not Set";
+  }
   $query = "SELECT * from patient where pMRN = '$MRN'";
   $responce = mysqli_query($dbc, $query);
 

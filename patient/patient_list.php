@@ -22,10 +22,10 @@
         $row['pFName'] . '</td> <td>' .
         $row['pLName'] . '</td> <td>' .
         $row['pPhone'] . '</td> <td>' .
-        $row['pAge'] . '</td><td> ';
+        $row['pAge'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
         echo '</tr>';
       }
-      echo '<table>';
+      echo '</table>';
   }
   else{
     echo "Error with database";
