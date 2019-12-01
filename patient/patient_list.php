@@ -1,11 +1,13 @@
 <?php
   session_start();
 
+  echo '<a href="../doctor/doctor_schedule.php">Schedule</a>';
+
   include "../templates/header.php";
   require_once "../config.php";
 
-
   $user = $_POST['doctorID'];
+  $_SESSION["user"] = $user;
   $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient where drID = '$user'";
   $responce = mysqli_query($dbc, $query);
 
