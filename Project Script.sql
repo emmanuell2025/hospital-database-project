@@ -108,5 +108,4 @@
      Foreign Key (drID) References DOCTOR (drID),
      Foreign Key (medID) References MEDICINE (medID));
                                               
-     SET FOREIGN_KEY_CHECKS=1
-                                              
+     SET FOREIGN_KEY_CHECKS=1;           
