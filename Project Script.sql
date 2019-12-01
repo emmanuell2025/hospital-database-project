@@ -109,3 +109,4 @@
      Foreign Key (medID) References MEDICINE (medID));
                                               
      SET FOREIGN_KEY_CHECKS=1
+                                              
