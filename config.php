@@ -1,26 +1,18 @@
 <?php
-class Database{
+DEFINE ('DB_USER', 'bf7c7ff3d38152');
+DEFINE ('DB_PASSWORD', '38c4dba3');
+DEFINE ('DB_HOST', 'us-cdbr-iron-east-05.cleardb.net');
+DEFINE ('DB_NAME', 'heroku_1ba2fa6c7c2d2b6');
 
-    // specify your own database credentials
-    private $host = "dbms.gswcm.net";
-    private $db_name = "Group5_Fall2019";
-    private $username = "";
-    private $password = "";
-    public $conn;
 
-    // get the database connection
-    public function getConnection(){
+// mysql://bf7c7ff3d38152:38c4dba3@us-cdbr-iron-east-05.cleardb.net/heroku_1ba2fa6c7c2d2b6?reconnect=true
 
-        $this->conn = null;
+// INSTRUCTIONS FOR XAMPP MYSQL ACCESS
+// cd C:\xampp\mysql\bin or cd /opt/lampp/bin/
+// windows: mysql.exe -u bf7c7ff3d38152 -p -h us-cdbr-iron-east-05.cleardb.net
+// linux: ./mysql -u bf7c7ff3d38152 -p -h us-cdbr-iron-east-05.cleardb.net
+// password: 38c4dba3
+// use heroku_1ba2fa6c7c2d2b6;
 
-        try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->exec("set names utf8");
-        }catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
-        }
-
-        return $this->conn;
-    }
-}
-?
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+?>
