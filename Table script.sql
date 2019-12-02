@@ -63,7 +63,7 @@
      create table PROC (
      procID VarChar(20) NOT NULL Unique,
      pMRN Integer Not Null,
-     drID varChar(20) NOT NULL Unique,
+     drID varChar(20) NOT NULL,
      procDesc varChar(30) NOT NULL,
      procCost decimal(8,2) NOT NULL,
      Primary Key (procID),
