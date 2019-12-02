@@ -5,29 +5,33 @@
   require_once "../config.php";
 
   $user = $_SESSION["user"];
-  echo $user;
-  $query = "SELECT apID, appointment.DeptID, apDesc, procID, roomNum, apDate, apTime, pMRN FROM appointment, doctor WHERE appointment.drID = doctor.drID AND doctor.drID = '$user'";
+  echo $user . "<br>";
+  $query = "SELECT patient.pMRN, patient.pFName, patient.pLName, apID, apDesc, appointment.procID, roomNum, apDate, DATE_FORMAT(`appointment`.`apTime`,'%h:%i %p') FROM appointment, doctor, patient WHERE patient.pMRN = appointment.pMRN AND patient.procID = appointment.procID AND doctor.DeptID = appointment.DeptID AND doctor.drID = '$user'";
   $responce = mysqli_query($dbc, $query);
 
   if ($responce){
-    echo '<tablepFName> <tr>
+    echo '<table><tr class="theader">
     <td>Appointment ID</td>
     <td>Description</td>
     <td>Procedure ID</td>
     <td>Room Number</td>
     <td>Date</td>
     <td>Time</td>
-    <td>Patient</td></tr>';
+    <td>Patient MRN</td>
+    <td>Patient First Name</td>
+    <td>Patient Last Name</td>
+    </tr>';
       while ($row = mysqli_fetch_array($responce)){
         echo '<tr> <td>' .
         $row['apID'] . '</td> <td>' .
-        $row['appointment.DeptID'] . '</td> <td>' .
-        $row['apDescpAge'] . '</td> <td>' .
+        $row['apDesc'] . '</td> <td>' .
         $row['procID'] . '</td> <td>' .
         $row['roomNum'] . '</td> <td>' .
         $row['apDate'] . '</td> <td>' .
-        $row['apTime'] . '</td> <td>' .
-        $row['pMRN'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
+        $row[8] . '</td> <td>' .
+        $row['pMRN'] . '</td> <td>' .
+        $row['pFName'] . '</td> <td>' .
+        $row['pLName'] . '</td><td> <a href="../patient/patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
         echo '</tr>';
       }
       echo '</table>';
