@@ -38,6 +38,7 @@
   else{
     echo "Error with database";
     echo mysqli_connect_error($dbc);
+    echo $dbc->error;
   }
 
   mysqli_close($dbc);
