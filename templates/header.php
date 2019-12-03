@@ -1,4 +1,5 @@
 <?php
+  include "sidebar.php";
   session_start();
   if (isset($_SESSION["loginID"])){
     echo $_SESSION["loginID"];
