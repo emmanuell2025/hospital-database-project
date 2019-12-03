@@ -1,7 +1,7 @@
     SET FOREIGN_KEY_CHECKS=0;
     
     create table RECEPTION (
-     ReceptID Integer Not Null Unique,
+     ReceptID Integer Not Null,
      ReceptDept VarChar(20) Not Null,
      ReceptLoc VarChar(20) Not Null,
      ReceptPhone CHAR(10) NOT NULL,
@@ -9,7 +9,7 @@
 
 
      create table PATIENT (
-     pMRN Integer Not Null Unique,
+     pMRN Integer Not Null,
      pPhone CHAR(10) NOT NULL,
      pInsure VARCHAR(35) NOT NULL,
      pAddress VarChar(35) NOT NULL,
@@ -25,13 +25,13 @@
      Foreign Key (drID) References DOCTOR (drID)); 
 
      create table DEPARTMENT (
-     DeptID Integer Not Null Unique,
+     DeptID Integer Not Null,
      DeptName VarChar(30) NOT NULL,
      DeptHead VarChar(35) Not Null,
      Primary Key (DeptID));
 
      create table ROOM (
-     roomNum Integer Not Null Unique,
+     roomNum Integer Not Null,
      roomType VarChar(35) NOT NULL,
      pMRN Integer Not Null,
      nurseID Integer Not Null,
@@ -40,7 +40,7 @@
      Foreign Key (nurseID) References NURSE (nurseID)); 
 
      create table MEDICINE (
-     medID VarChar(20) NOT NULL Unique,
+     medID VarChar(20) NOT NULL,
      medName VarChar(35) NOT NULL,
      medPrice decimal(8,2) NOT NULL,
      medDosage varChar(15) NOT NULL,
@@ -49,7 +49,7 @@
      Primary Key (medID));
 
      create table DOCTOR (
-     drID varChar(20) NOT NULL Unique,
+     drID varChar(20) NOT NULL,
      drLName VarChar(15) NOT NULL,
      drFName VarChar(15) NOT NULL,
      DeptID Integer Not Null,
@@ -61,7 +61,7 @@
      Foreign Key (DeptID) References DEPARTMENT (DEPTID));
 
      create table PROC (
-     procID VarChar(20) NOT NULL Unique,
+     procID VarChar(20) NOT NULL,
      pMRN Integer Not Null,
      drID varChar(20) NOT NULL,
      procDesc varChar(30) NOT NULL,
@@ -71,7 +71,7 @@
      Foreign Key (drID) References DOCTOR (drID));
 
      create table APPOINTMENT (
-     apID Integer NOT NULL UNIQUE,
+     apID Integer NOT NULL,
      DeptID Integer Not Null,
      apDesc varChar(30) NOT NULL,
      procID VarChar(20) NOT NULL,
@@ -88,7 +88,7 @@
      Foreign Key (pMRN) References PATIENT (pMRN));
 
      create table NURSE (
-     nurseID Integer NOT NULL UNIQUE, 
+     nurseID Integer NOT NULL, 
      nurseLName VarChar(15) NOT NULL,
      nurseFName VarChar(15) NOT NULL,
      DeptID Integer Not Null,
@@ -99,7 +99,7 @@
      Foreign Key (DeptID) References DEPARTMENT (DeptID));
  
      create table PRESCRIPTION (
-     rxID varChar(10) NOT NULL UNIQUE,
+     rxID varChar(10) NOT NULL,
      pMRN Integer Not Null,
      drID varChar(20) NOT NULL,
      rxCost decimal(8,2) NOT NULL,
