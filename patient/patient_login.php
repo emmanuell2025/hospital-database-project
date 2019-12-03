@@ -1,7 +1,6 @@
 <?php include "../templates/header.php";
 require_once "../config.php";
 
-session_start();
 
 $query = "SELECT pMRN from patient";
 $responce = mysqli_query($dbc, $query);

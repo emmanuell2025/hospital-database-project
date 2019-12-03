@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if (isset($_SESSION["loginID"])){
+    echo $_SESSION["loginID"];
+  }
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,5 +16,8 @@
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <body>
+    <a href="/hospital-database-project/logout.php">Logout</a>
+  </body>
 
 </html>

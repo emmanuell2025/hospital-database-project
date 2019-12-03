@@ -1,5 +1,4 @@
 <?php
-  session_start();
 
   echo '<a href="../doctor/doctor_schedule.php">Schedule</a>';
 
