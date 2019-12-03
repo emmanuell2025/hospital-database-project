@@ -36,7 +36,7 @@
         $row['pFName'] . '</td> <td>' .
         $row['pLName'] . '</td> <td>' .
         $row['pPhone'] . '</td> <td>' .
-        $row['pAge'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
+        $row['pAge'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td><td> <a href="../doctor/create_prescription.php?MRN=' . $row['pMRN'] . '">Create Prescription</a></td>';
         echo '</tr>';
         if ($tablerownum == "1") {
           $tablerownum = "0";
