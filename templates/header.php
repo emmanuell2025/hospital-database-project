@@ -1,7 +1,15 @@
 <?php
-  include "sidebar.php";
   session_start();
   if (isset($_SESSION["loginID"])){
+    if($_SESSION["loginID"] == "doctor") {
+      
+    }
+    elseif($_SESSION["loginID"] == "patient") {
+      
+    }
+    elseif($_SESSION["loginID"] == "reception") {
+    
+    }
     echo $_SESSION["loginID"];
   }
 
@@ -14,12 +22,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Simple Database App</title>
-
-    <link rel="stylesheet" href="css/style.css" />
+  
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <a href="/hospital-database-project/logout.php">Logout</a>
-    <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
+    <div class="main-header">
+      <a href="/hospital-database-project/logout.php" class="logout-button">Logout</a>
+      <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
+    </div>
   </body>
 
 </html>

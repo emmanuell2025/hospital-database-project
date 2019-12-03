@@ -40,8 +40,9 @@ if ($responce){
   <td>Doctor</td>
   <td>Cost</td>
   </tr>';
+  $tablerownum = "0";
     while ($row = mysqli_fetch_array($responce)){
-      echo '<tr> <td>';
+      echo '<tr class="trow' . $tablerownum .'"> <td>';
       if ($login=="reception"){
         echo $row['pMRN'] . '</td> <td>' .
         $row['pFName'] . " " . $row['pLName'] . '</td> <td>';
@@ -56,6 +57,12 @@ if ($responce){
         echo '<a href="../reception/create_appointment.php?MRN=' . $row['pMRN'] . '">Create Appointment</a></td>';
       }
       echo '</tr>';
+      if ($tablerownum == "1") {
+        $tablerownum = "0";
+      }
+      else {
+        $tablerownum = "1";
+      }
     }
     echo '</table>';
 }
