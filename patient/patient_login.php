@@ -4,6 +4,7 @@ require_once "../config.php";
 
 $query = "SELECT pMRN from patient";
 $responce = mysqli_query($dbc, $query);
+$_SESSION["loginID"] = "patient";
 if ($responce){
   while($row = mysqli_fetch_array($responce)) {
     echo $row['pMRN'] . "\n"; // Print a single column data

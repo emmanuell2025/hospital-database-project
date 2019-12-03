@@ -1,4 +1,6 @@
 <?php
+  include "sidebar.php";
+
   session_start();
   if (isset($_SESSION["loginID"])){
     if($_SESSION["loginID"] == "doctor") {
