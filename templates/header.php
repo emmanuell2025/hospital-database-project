@@ -30,7 +30,7 @@
   </head>
   <body>
     <div class="main-header">
-      <a href="./logout.php" class="logout-button">Logout</a>
+      <a href="../logout.php" class="logout-button">Logout</a>
       <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
     </div>
   </body>
