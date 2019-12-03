@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
     <label for="rxID">Prescription ID</label> <input type="text" name="rxID" value="">
     <label for="pMRN">Patient MRN</label> <input type="text" name="pMRN" value="<?php echo $MRN; ?>">
     <label for="drID">Doctor ID</label> <input type="text" name="drID" value="">
-    <label for="rxCost">Cost</label> <input type="text" name="rxID" value="">
+    <label for="rxCost">Cost</label> <input type="text" name="rxCost" value="">
     <label for="medID">Medicine ID</label> <input type="text" name="medID" value="">
     <input type="submit" name="submit" value="submit">
 
