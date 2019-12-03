@@ -1,0 +1,1 @@
+insert into appointment values ('apID', 'DeptID', 'apDesc', 'procID', 'roomNum', 'apDate', 'apTime', 'pMRN', 'drID'); 
