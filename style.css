@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.main-header {
+    border-bottom: 2px solid blue;
+    justify-content: right;
+}
+
+.pat-table-head {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-bottom: 1px solid blue;
+}
+
+.theader {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border-bottom: 1px solid blue;
+}
+
+.pat-table-row0 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: lightgray;
+}
+
+.pat-table-row1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: gray;
+}
+
+.trow0 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: lightgray;
+}
+
+.trow1 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    background: gray;
+}
+
+.logout-button {
+    margin-right: 50px;
+}

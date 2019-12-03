@@ -20,8 +20,9 @@
     <td>Patient First Name</td>
     <td>Patient Last Name</td>
     </tr>';
+    $tablerownum = "1";
       while ($row = mysqli_fetch_array($responce)){
-        echo '<tr> <td>' .
+        echo '<tr class="trow' . $tablerownum .'"> <td>' .
         $row['apID'] . '</td> <td>' .
         $row['apDesc'] . '</td> <td>' .
         $row['procID'] . '</td> <td>' .
@@ -32,6 +33,12 @@
         $row['pFName'] . '</td> <td>' .
         $row['pLName'] . '</td><td> <a href="../patient/patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
         echo '</tr>';
+        if ($tablerownum == "1") {
+          $tablerownum = "0";
+        }
+        else {
+          $tablerownum = "1";
+        }
       }
       echo '</table>';
   }

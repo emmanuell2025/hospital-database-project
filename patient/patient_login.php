@@ -18,9 +18,11 @@ else{
 
 mysqli_close($dbc);
 
+if (!isset($_SESSION["loginID"])) {
+  $_SESSION["loginID"]="patient";
+}
 
 if (isset($_POST['submit'])){
-  $_SESSION["loginID"]="patient";
   $_SESSION["MRN"]=$_POST['MRN'];
 }
 ?>
