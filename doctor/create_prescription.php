@@ -9,6 +9,12 @@ if (isset($_GET["MRN"])){
 else {
   $MRN = "";
 }
+if (isset($_SESSION["doctorID"])){
+  $doctorID = $_SESSION['doctorID'];
+}
+else {
+  $doctorID = "";
+}
 
 if(isset($_POST['submit'])){
   $rxID = $_POST['rxID'];
@@ -30,8 +36,8 @@ if(isset($_POST['submit'])){
   mysqli_query($dbc, $foreignDisable);
   $responce = mysqli_query($dbc, $query);
   if ($responce){
-    echo "Appointment Created Successfully";
-    header("Refresh:3;url=../patient/appointments.php");
+    echo "Prescription Created Successfully";
+    header("Refresh:3;url=../patient/patient_list.php");
   }
   else {
     echo "error with appointment";
@@ -46,8 +52,8 @@ if(isset($_POST['submit'])){
 <body>
   <form action="#" method="post">
     <label for="rxID">Prescription ID</label> <input type="text" name="rxID" value="">
-    <label for="pMRN">Patient MRN</label> <input type="text" name="pMRN" value="<?php echo $MRN; ?>">
-    <label for="drID">Doctor ID</label> <input type="text" name="drID" value="">
+    <label for="pMRN">Patient MRN</label> <input type="text" name="pMRN" value="<?php echo $doctorID; ?>">
+    <label for="drID">Doctor ID</label> <input type="text" name="drID" value="<?php echo $MRN; ?>">
     <label for="rxCost">Cost</label> <input type="text" name="rxCost" value="">
     <label for="medID">Medicine ID</label> <input type="text" name="medID" value="">
     <input type="submit" name="submit" value="submit">

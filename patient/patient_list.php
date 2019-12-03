@@ -19,6 +19,9 @@
     echo '<a href="../patient/appointments.php">Appointments</a>';
     $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient";
   }
+  if (isset($_POST['doctorID'])){
+    $_SESSION['doctorID']=$_POST['doctorID'];
+  }
   $responce = mysqli_query($dbc, $query);
 
   $tablerownum = "1";
