@@ -19,9 +19,8 @@ mysqli_close($dbc);
 
 
 if (isset($_POST['submit'])){
-  $MRN=$_POST['MRN'];
-  $_SESSION["login"]="patient";
-  $_SESSION["MRN"]=$MRN;
+  $_SESSION["loginID"]="patient";
+  $_SESSION["MRN"]=$_POST['MRN'];
 }
 ?>
   <body>

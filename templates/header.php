@@ -19,6 +19,7 @@
   </head>
   <body>
     <a href="/hospital-database-project/logout.php">Logout</a>
+    <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
   </body>
 
 </html>

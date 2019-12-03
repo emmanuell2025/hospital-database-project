@@ -12,6 +12,9 @@ include "templates/header.php";
       <li>
         <a href="patient/patient_login.php"><strong>Patient</strong></a> Login
       </li>
+      <li>
+        <a href="reception/reception_login.php"><strong>Reception</strong></a> Login
+      </li>
     </ul>
   </body>
 </html>

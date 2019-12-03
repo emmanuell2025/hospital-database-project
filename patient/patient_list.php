@@ -1,13 +1,24 @@
 <?php
 
-  echo '<a href="../doctor/doctor_schedule.php">Schedule</a>';
 
   include "../templates/header.php";
   require_once "../config.php";
 
-  $user = $_POST['doctorID'];
-  $_SESSION["user"] = $user;
-  $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient where drID = '$user'";
+
+  if (isset($_POST['doctorID'])){
+    $user = $_POST['doctorID'];
+    $_SESSION["user"] = $user;
+  }
+  $login = $_SESSION["loginID"];
+
+  if ($login == "doctor"){
+    echo '<a href="../doctor/doctor_schedule.php">Schedule</a>';
+    $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient where drID = '$user'";
+  }
+  else if ($login == "reception"){
+    echo '<a href="../patient/appointments.php">Appointments</a>';
+    $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient";
+  }
   $responce = mysqli_query($dbc, $query);
 
   if ($responce){
