@@ -3,15 +3,8 @@
 
   require_once "../config.php";
 
-  if (isset($_POST['MRN'])){
-    $_SESSION["MRN"]=$_POST['MRN'];
-    $_SESSION["user"]= "patient";
-  }
 
-  if (isset($_POST["MRN"])){
-    $MRN = $_POST["MRN"];
-  }
-  else if (isset($_GET["MRN"])){
+  if (isset($_GET["MRN"])){
     $MRN = $_GET["MRN"];
   }
   else if (isset($_SESSION["MRN"])){

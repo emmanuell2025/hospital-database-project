@@ -5,10 +5,7 @@
   require_once "../config.php";
 
 
-  if (isset($_POST['doctorID'])){
-    $_SESSION["user"] = $_POST['doctorID'];
-    $user = $_SESSION["user"];
-  }
+
   if (isset($_SESSION['doctorID'])){
     $user = $_SESSION["user"];
   }
@@ -57,7 +54,7 @@
   }
 
   mysqli_close($dbc);
-  
+
   echo '</div>';
 
 ?>

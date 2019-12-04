@@ -30,9 +30,9 @@ if (isset($_POST['submit'])){
 
     <ul>
       <li class="login">
-        <form action="../patient/patient_list.php" method="POST">
+        <form action="../login.php" method="POST">
           <label for="doctorID">Reception ID</label>
-          <input type="text" name="doctorID">
+          <input type="text" name="receptionID">
           <input type="submit" name="submit" value="Submit">
         </form>
       </li>
