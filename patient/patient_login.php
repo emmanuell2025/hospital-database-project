@@ -1,10 +1,10 @@
 <?php include "../templates/header.php";
 require_once "../config.php";
 
-session_start();
 
 $query = "SELECT pMRN from patient";
 $responce = mysqli_query($dbc, $query);
+$_SESSION["loginID"] = "patient";
 if ($responce){
   while($row = mysqli_fetch_array($responce)) {
     echo $row['pMRN'] . "\n"; // Print a single column data
@@ -18,11 +18,12 @@ else{
 
 mysqli_close($dbc);
 
+if (!isset($_SESSION["loginID"])) {
+  $_SESSION["loginID"]="patient";
+}
 
 if (isset($_POST['submit'])){
-  $MRN=$_POST['MRN'];
-  $_SESSION["login"]="patient";
-  $_SESSION["MRN"]=$MRN;
+  $_SESSION["MRN"]=$_POST['MRN'];
 }
 ?>
   <body>

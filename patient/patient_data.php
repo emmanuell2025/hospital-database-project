@@ -3,7 +3,10 @@
 
   require_once "../config.php";
 
-  session_start();
+  if (isset($_POST['MRN'])){
+    $_SESSION["MRN"]=$_POST['MRN'];
+  }
+  $_SESSION["user"]= "patient";
 
   if (isset($_POST["MRN"])){
     $MRN = $_POST["MRN"];
@@ -17,13 +20,21 @@
   $query = "SELECT * from patient where pMRN = '$MRN'";
   $responce = mysqli_query($dbc, $query);
 
+  echo '<a href="./appointments.php">Appointments</a>';
+  echo '<a href="./prescriptions.php">Prescriptions</a>';
+
   if ($responce){
     while($row = mysqli_fetch_array($responce)) {
       echo "MRN: " . $row['pMRN'] . "<br>";
       echo "First Name: " . $row['pFName'] . "<br>";
-      // echo print_r($row);       // Print the entire row data
+      echo "Last Name: " . $row['pLName'] . "<br>";
+      echo "Phone Number: " . $row['pPhone'] . "<br>";
+      echo "Insurance: " . $row['pInsure'] . "<br>";
+      echo "Address: " . $row['pAddress'] . "<br>";
+      echo "SSN: " . $row['pSSN'] . "<br>";
+      echo "DOB: " . $row['pDOB'] . "<br>";
+      echo "Age: " . $row['pAge'] . "<br>";
   }
-    echo 'Good';
   }
   else{
     echo "Error with database";
