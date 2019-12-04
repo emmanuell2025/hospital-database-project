@@ -33,6 +33,7 @@
       '</td> <td>Patient Name: ' . $row['pFName'] . ' ' . $row['pLName'] . 
       '</td> <td> Doctor\'s Name: ' . $row['drFName'] . ' ' . $row['drLName'] . '</td> </tr> </table> </div>';
       $sidebar = '<div class="sidebar">
+      <a href="../patient/patient_data.php">Patient Info</a>
       <a href="./prescriptions.php">Prescriptions</a>
       <a href="../patient/appointments.php">Appointments</a>
       <a href="../logout.php" class="logout-button">Logout</a>
