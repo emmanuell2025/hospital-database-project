@@ -14,6 +14,9 @@
   else if (isset($_GET["MRN"])){
     $MRN = $_GET["MRN"];
   }
+  else if (isset($_SESSION["MRN"])){
+    $MRN = $_SESSION["MRN"];
+  }
   else {
     echo "Error MRN Not Set";
   }
