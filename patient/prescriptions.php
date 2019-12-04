@@ -15,7 +15,7 @@
   $query = "SELECT pFName, pLName, rxID, rxCost
 FROM patient, prescription
 WHERE patient.pMRN = prescription.pMRN
-AND pMRN = '$MRN'";
+AND prescription.pMRN = '$MRN'";
 
   $responce = mysqli_query($dbc, $query);
 
