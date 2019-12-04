@@ -12,8 +12,8 @@
     $MRN = $_GET['MRN'];
   }
 
-  $query = "SELECT pFName, pLName, rxID, rxCost
-FROM patient, prescription
+  $query = "SELECT pFName, pLName, rxID, rxCost, medName
+FROM patient, prescription, medicine
 WHERE patient.pMRN = prescription.pMRN
 AND prescription.pMRN = '$MRN'";
 
@@ -30,6 +30,7 @@ AND prescription.pMRN = '$MRN'";
     }
     echo '
     <td>Prescription ID</td>
+    <td>Medicine Name</td>
     <td>Cost</td></tr>';
       while ($row = mysqli_fetch_array($responce)){
         echo '<tr class="pat-table-row' . $tablerownum . '"> <td>';
@@ -38,6 +39,7 @@ AND prescription.pMRN = '$MRN'";
           $row['pLName'] . '</td> <td>';
         }
         echo $row['rxID'] . '</td> <td>' .
+        $row['medName'] . '</td>';
         $row['rxCost'] . '</td>';
         echo '</tr>';
         if ($tablerownum == "1") {
