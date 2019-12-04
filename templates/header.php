@@ -12,19 +12,18 @@
       $user = $_SESSION["user"];
       $query = "SELECT doctor.drFName, doctor.drLName, doctor.drSpecialty, department.deptName
        FROM doctor, department WHERE doctor.drID = '$user' AND doctor.deptID = department.deptID;";
-      echo "User number: " . $user . "<br>";
       $response = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($response);
-      echo "User: " . $row["drFName"] . ' ' . $row["drLName"];
-      echo "<br>Department: " . $row["deptName"] . " Specialty: " . $row["drSpecialty"];
+      echo '<table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] . 
+      '</td> <td>User number: ' . $user . '</td> <td>Department: ' . $row["deptName"] . '</td> <td> Specialty: ' . $row["drSpecialty"] . '</td> </tr> </table>';
     }
     elseif($login == "patient") {
       $mrn = $_SESSION['MRN'];
       $query = "SELECT patient.pFName, patient.pLName, patient.pMRN, doctor.drFName, doctor.drLName
        FROM doctor, patient WHERE '$mrn' = patient.pMRN AND patient.drID = doctor.drID;";
-      echo "MRN: " . $mrn . "<br>";
       $response = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($response);
+      echo "MRN: " . $mrn . "<br>";
       echo "Patient Name: " . $row['pFName'] . ' ' . $row['pLName'] . '<br>';
       echo "Doctor's Name: " . $row['drFName'] . ' ' . $row['drLName'];
     }
@@ -35,7 +34,24 @@
       $row = mysqli_fetch_array($response);
       echo "User number: " . $user . "<br>Department: " . $row["receptDept"];
     }
+    echo '<div class="main-header">
+      <a href="../logout.php" class="logout-button">Logout</a>
+      <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
+    </div>';
   }
+  else echo '
+    <h1>Login Here</h1>
+    <ul class="login-container">
+      <li>
+        <a href="doctor/doctor_login.php"><strong>Doctor Login</strong></a>
+      </li>
+      <li>
+        <a href="patient/patient_login.php"><strong>Patient Login</strong></a>
+      </li>
+      <li>
+        <a href="reception/reception_login.php"><strong>Reception Login</strong></a>
+      </li>
+    </ul>';
 
  ?>
 <!DOCTYPE html>
@@ -49,10 +65,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body style="background-color:rgb(51, 52, 53); color:white;">
-    <div class="main-header">
-      <a href="../logout.php" class="logout-button">Logout</a>
-      <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
-    </div>
     <div class=sidebar>
       
     </div>

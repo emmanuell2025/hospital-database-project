@@ -52,3 +52,33 @@
 a {
     color: rgb(0, 171, 173);
 }
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+}
+
+.contributors-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.resource-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.big-paragraph {
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 36px;
+}
+
+.profile-info {
+    grid-template-columns: 1fr 1fr;
+}
