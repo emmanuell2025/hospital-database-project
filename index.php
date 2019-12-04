@@ -28,6 +28,7 @@
     <a href="https://canes-my.sharepoint.com/:p:/g/personal/elopez1_radar_gsw_edu/EaLzeZZHXn9Hoob2qUQby7QBPmkN9PZ-_TvryCBCRCJ0rw?e=mov9kc">PowerPoint Presentation</a>
 
     <a href="./database_backup.sql">Download Database</a>
+    <a href="https://github.com/emmanuell2025/hospital-database-project">GitHub Repo</a>
 
 
 
