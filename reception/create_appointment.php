@@ -22,13 +22,6 @@ if(isset($_POST['submit'])){
   $pMRN = $_POST['pMRN'];
   $drID = $_POST['drID'];
 
-  echo $_POST['apTime'];
-  echo "<br>";
-  echo $_POST['apDate'];
-  echo "<br>";
-  echo "<br>";
-  echo $apTime;
-
   $query = "INSERT into appointment values ('$apID', '$DeptID', '$apDesc', '$procID', '$roomNum', '$apDate', '$apTime', '$pMRN', '$drID')";
   $foreignDisable = "SET FOREIGN_KEY_CHECKS=0";
   $foreignEnable = "SET FOREIGN_KEY_CHECKS=1";
