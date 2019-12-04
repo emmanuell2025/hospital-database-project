@@ -6,8 +6,8 @@
 
 
   if (isset($_POST['doctorID'])){
-    $user = $_POST['doctorID'];
     $_SESSION["user"] = $user;
+    $user = $_SESSION["user"];
   }
   $login = $_SESSION["loginID"];
 
