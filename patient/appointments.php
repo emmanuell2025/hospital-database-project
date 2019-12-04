@@ -19,7 +19,6 @@ AND appointment.pMRN = patient.pMRN";
 }
 
 $login = $_SESSION["loginID"];
-echo $login;
 
 $responce = mysqli_query($dbc, $query);
 
@@ -68,4 +67,5 @@ else{
 }
 
 mysqli_close($dbc);
+echo '</div>';
  ?>

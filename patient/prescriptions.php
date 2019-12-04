@@ -59,9 +59,5 @@ AND prescription.pMRN = '$MRN'";
 
   mysqli_close($dbc);
 
-
+  echo '</div>';
 ?>
-
-
-
-<?php include "../templates/footer.php"; ?>

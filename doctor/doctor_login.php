@@ -37,6 +37,6 @@ if (isset($_POST['submit'])){
         </form>
       </li>
     </ul>
+  </div>
   </body>
 </html>
-<?php include "../templates/footer.php"; ?>

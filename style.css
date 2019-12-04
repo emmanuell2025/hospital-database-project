@@ -2,11 +2,22 @@
   margin: 0;
   padding: 0;
   display: grid;
+  font-size: large;
 }
 
 .main-header {
     border-bottom: 2px solid black;
     padding-bottom: 10px;
+}
+
+.main-content-loggedin {
+    height: 100%;
+    display: flex;
+}
+
+.main-content-loggedout {
+    height: 100%;
+    display: grid;
 }
 
 .pat-table-head {
@@ -82,4 +93,15 @@ a {
 
 .profile-info {
     grid-template-columns: 1fr 1fr;
+}
+
+.sidebar {
+    display: grid;
+    height: 100%;
+    width: min-content;
+    border-right: solid 2px black;
+}
+
+table {
+    padding-left: 20px;
 }

@@ -15,11 +15,9 @@
   $login = $_SESSION["loginID"];
 
   if ($login == "doctor"){
-    echo '<a href="../doctor/doctor_schedule.php">Schedule</a>';
     $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient where drID = '$user'";
   }
   else if ($login == "reception"){
-    echo '<a href="../patient/appointments.php">Appointments</a>';
     $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient";
   }
   if (isset($_POST['doctorID'])){
@@ -59,10 +57,7 @@
   }
 
   mysqli_close($dbc);
-
+  
+  echo '</div>';
 
 ?>
-
-
-
-<?php include "../templates/footer.php"; ?>

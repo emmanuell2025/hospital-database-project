@@ -1,12 +1,10 @@
 <?php
-  include "sidebar.php";
   session_start();
   
-  
+  $sidebar = '';
   if (isset($_SESSION["loginID"])){
     require_once "../config.php";
 
-    $sidebar = '';
     
     $login = $_SESSION["loginID"];
 
@@ -19,9 +17,11 @@
       echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] . 
       '</td> <td>User number: ' . $user . '</td> <td>Department: ' . $row["deptName"] . '</td> <td> Specialty: ' . $row["drSpecialty"]
        . '</td> </tr> </table> </div>';
-      $sidebar = '<div class="sidebar">
-      <a href="../patient/patient_list.php">Patients</a>
-      </div>';
+       $sidebar = '<div class="sidebar">
+       <a href="../patient/patient_list.php">Patients</a>
+       <a href="../doctor/doctor_schedule.php">Schedule</a>
+       <a href="../logout.php" class="logout-button">Logout</a>
+       </div>';
     }
     elseif($login == "patient") {
       $mrn = $_SESSION['MRN'];
@@ -32,6 +32,11 @@
       echo '<div class="main-header"> <table> <tr class="profile-info"> <td>MRN: ' . $mrn .
       '</td> <td>Patient Name: ' . $row['pFName'] . ' ' . $row['pLName'] . 
       '</td> <td> Doctor\'s Name: ' . $row['drFName'] . ' ' . $row['drLName'] . '</td> </tr> </table> </div>';
+      $sidebar = '<div class="sidebar">
+      <a href="./prescriptions.php">Prescriptions</a>
+      <a href="../patient/appointments.php">Appointments</a>
+      <a href="../logout.php" class="logout-button">Logout</a>
+      </div>';
     }
     elseif($login == "reception") {
       $user = $_SESSION["user"];
@@ -40,11 +45,13 @@
       $row = mysqli_fetch_array($responce);
       echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User number: ' . $user . '</td> <td>Department: '
       . $row["receptDept"] . '</td> </tr> </table> </div>';
+      $sidebar = '<div class="sidebar">
+      <a href="../patient/patient_list.php">Patients</a>
+      <a href="../patient/appointments.php">Appointments</a>
+      <a href="../logout.php" class="logout-button">Logout</a>
+      </div>';
     }
-    // echo '<div class="main-header">
-    //   <a href="../logout.php" class="logout-button">Logout</a>
-    //   <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
-    // </div>';
+    echo '<div class="main-content-loggedin">';
   }
   else echo '
     <h1>Login Here</h1>
@@ -58,7 +65,8 @@
       <li>
         <a href="reception/reception_login.php"><strong>Reception Login</strong></a>
       </li>
-    </ul>';
+    </ul> <div class="main-content-loggedout">';
+    
   echo $sidebar;
 
  ?>
@@ -73,9 +81,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body style="background-color:rgb(51, 52, 53); color:white;">
-    <div class=sidebar>
-      
-    </div>
   </body>
 
 </html>
