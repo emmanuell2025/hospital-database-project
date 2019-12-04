@@ -2,49 +2,106 @@
   margin: 0;
   padding: 0;
   display: grid;
+  font-size: large;
 }
 
 .main-header {
-    border-bottom: 2px solid blue;
-    justify-content: right;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.main-content-loggedin {
+    height: 100%;
+    display: flex;
+}
+
+.main-content-loggedout {
+    height: 100%;
+    display: grid;
 }
 
 .pat-table-head {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    border-bottom: 1px solid blue;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 2px solid black;
 }
 
 .theader {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid black;
 }
 
 .pat-table-row0 {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    background: lightgray;
+    grid-template-columns: repeat(7, 1fr);
+    background: rgb(87, 92, 94);
 }
 
 .pat-table-row1 {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    background: gray;
+    grid-template-columns: repeat(7, 1fr);
+    background: rgb(123, 132, 133);
 }
 
 .trow0 {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    background: lightgray;
+    background: rgb(87, 92, 94);
 }
 
 .trow1 {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    background: gray;
+    background: rgb(123, 132, 133);
 }
 
 .logout-button {
     margin-right: 50px;
+}
+
+a {
+    color: rgb(0, 171, 173);
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.contributors-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.resource-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.big-paragraph {
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 36px;
+}
+
+.profile-info {
+    grid-template-columns: 1fr 1fr;
+}
+
+.sidebar {
+    display: grid;
+    height: 100%;
+    width: min-content;
+    border-right: solid 2px black;
+}
+
+table {
+    padding-left: 20px;
 }

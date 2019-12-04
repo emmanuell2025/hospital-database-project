@@ -5,8 +5,8 @@
 
   if (isset($_POST['MRN'])){
     $_SESSION["MRN"]=$_POST['MRN'];
+    $_SESSION["user"]= "patient";
   }
-  $_SESSION["user"]= "patient";
 
   if (isset($_POST["MRN"])){
     $MRN = $_POST["MRN"];
@@ -19,9 +19,6 @@
   }
   $query = "SELECT * from patient where pMRN = '$MRN'";
   $responce = mysqli_query($dbc, $query);
-
-  echo '<a href="./appointments.php">Appointments</a>';
-  echo '<a href="./prescriptions.php">Prescriptions</a>';
 
   if ($responce){
     while($row = mysqli_fetch_array($responce)) {
@@ -42,4 +39,5 @@
   }
 
   mysqli_close($dbc);
+  echo '</div>';
  ?>
