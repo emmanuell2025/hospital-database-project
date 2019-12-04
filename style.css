@@ -11,7 +11,7 @@
 
 .pat-table-head {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     border-bottom: 2px solid black;
 }
 
@@ -23,13 +23,13 @@
 
 .pat-table-row0 {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     background: rgb(87, 92, 94);
 }
 
 .pat-table-row1 {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     background: rgb(123, 132, 133);
 }
 

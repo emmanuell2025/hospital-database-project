@@ -29,14 +29,14 @@
 
   $tablerownum = "1";
 
-  if ($response){
+  if ($responce){
     echo '<table> <tr class="pat-table-head">
     <td>MRN</td>
     <td>First Name</td>
     <td>Last Name</td>
     <td>Phone Number</td>
     <td>Age</td></tr>';
-      while ($row = mysqli_fetch_array($response)){
+      while ($row = mysqli_fetch_array($responce)){
         echo '<tr class="pat-table-row' . $tablerownum . '"> <td>' .
         $row['pMRN'] . '</td> <td>' .
         $row['pFName'] . '</td> <td>' .

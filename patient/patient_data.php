@@ -18,13 +18,13 @@
     echo "Error MRN Not Set";
   }
   $query = "SELECT * from patient where pMRN = '$MRN'";
-  $response = mysqli_query($dbc, $query);
+  $responce = mysqli_query($dbc, $query);
 
   echo '<a href="./appointments.php">Appointments</a>';
   echo '<a href="./prescriptions.php">Prescriptions</a>';
 
-  if ($response){
-    while($row = mysqli_fetch_array($response)) {
+  if ($responce){
+    while($row = mysqli_fetch_array($responce)) {
       echo "MRN: " . $row['pMRN'] . "<br>";
       echo "First Name: " . $row['pFName'] . "<br>";
       echo "Last Name: " . $row['pLName'] . "<br>";

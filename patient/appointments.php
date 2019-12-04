@@ -21,9 +21,9 @@ AND appointment.pMRN = patient.pMRN";
 $login = $_SESSION["loginID"];
 echo $login;
 
-$response = mysqli_query($dbc, $query);
+$responce = mysqli_query($dbc, $query);
 
-if ($response){
+if ($responce){
   echo '<table><tr class="theader">';
   if ($login=="reception"){
     echo '<td>MRN</td><td>Patient Name</td>';
@@ -37,7 +37,7 @@ if ($response){
   <td>Cost</td>
   </tr>';
   $tablerownum = "0";
-    while ($row = mysqli_fetch_array($response)){
+    while ($row = mysqli_fetch_array($responce)){
       echo '<tr class="trow' . $tablerownum .'"> <td>';
       if ($login=="reception"){
         echo $row['pMRN'] . '</td> <td>' .

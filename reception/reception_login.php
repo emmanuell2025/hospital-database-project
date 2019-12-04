@@ -6,11 +6,11 @@ require_once "../config.php";
 $_SESSION["loginID"] = "reception";
 
 // $query = "SELECT drID from doctor";
-// $response = mysqli_query($dbc, $query);
+// $responce = mysqli_query($dbc, $query);
 //
 //
-// if ($response){
-//   while($row = mysqli_fetch_array($response)) {
+// if ($responce){
+//   while($row = mysqli_fetch_array($responce)) {
 //     echo $row['drID'] . "\n";
 // }}
 // else{

@@ -3,10 +3,10 @@ require_once "../config.php";
 
 
 $query = "SELECT pMRN from patient";
-$response = mysqli_query($dbc, $query);
+$responce = mysqli_query($dbc, $query);
 $_SESSION["loginID"] = "patient";
-if ($response){
-  while($row = mysqli_fetch_array($response)) {
+if ($responce){
+  while($row = mysqli_fetch_array($responce)) {
     echo $row['pMRN'] . "\n"; // Print a single column data
     // echo print_r($row);       // Print the entire row data
 }
