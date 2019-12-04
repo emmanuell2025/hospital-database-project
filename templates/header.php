@@ -48,7 +48,7 @@
   </head>
   <body style="background-color:rgb(51, 52, 53); color:white;">
     <div class="main-header">
-      <a href="/hospital-database-project/logout.php" class="logout-button">Logout</a>
+      <a href="../logout.php" class="logout-button">Logout</a>
       <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
     </div>
   </body>

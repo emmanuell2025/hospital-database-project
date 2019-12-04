@@ -21,14 +21,20 @@
   $response = mysqli_query($dbc, $query);
 
   echo '<a href="./appointments.php">Appointments</a>';
+  echo '<a href="./prescriptions.php">Prescriptions</a>';
 
   if ($response){
     while($row = mysqli_fetch_array($response)) {
       echo "MRN: " . $row['pMRN'] . "<br>";
       echo "First Name: " . $row['pFName'] . "<br>";
-      // echo print_r($row);       // Print the entire row data
+      echo "Last Name: " . $row['pLName'] . "<br>";
+      echo "Phone Number: " . $row['pPhone'] . "<br>";
+      echo "Insurance: " . $row['pInsure'] . "<br>";
+      echo "Address: " . $row['pAddress'] . "<br>";
+      echo "SSN: " . $row['pSSN'] . "<br>";
+      echo "DOB: " . $row['pDOB'] . "<br>";
+      echo "Age: " . $row['pAge'] . "<br>";
   }
-    echo 'Good';
   }
   else{
     echo "Error with database";

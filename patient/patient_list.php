@@ -6,8 +6,11 @@
 
 
   if (isset($_POST['doctorID'])){
-    $user = $_POST['doctorID'];
-    $_SESSION["user"] = $user;
+    $_SESSION["user"] = $_POST['doctorID'];
+    $user = $_SESSION["user"];
+  }
+  if (isset($_SESSION['doctorID'])){
+    $user = $_SESSION["user"];
   }
   $login = $_SESSION["loginID"];
 
@@ -19,7 +22,10 @@
     echo '<a href="../patient/appointments.php">Appointments</a>';
     $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient";
   }
-  $response = mysqli_query($dbc, $query);
+  if (isset($_POST['doctorID'])){
+    $_SESSION['doctorID']=$_POST['doctorID'];
+  }
+  $responce = mysqli_query($dbc, $query);
 
   $tablerownum = "1";
 
@@ -36,7 +42,7 @@
         $row['pFName'] . '</td> <td>' .
         $row['pLName'] . '</td> <td>' .
         $row['pPhone'] . '</td> <td>' .
-        $row['pAge'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td>';
+        $row['pAge'] . '</td><td> <a href="./patient_data.php?MRN=' . $row['pMRN'] . '">View</a></td><td> <a href="../doctor/create_prescription.php?MRN=' . $row['pMRN'] . '">Create Prescription</a></td>';
         echo '</tr>';
         if ($tablerownum == "1") {
           $tablerownum = "0";
