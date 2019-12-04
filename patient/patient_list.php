@@ -9,6 +9,9 @@
     $_SESSION["user"] = $_POST['doctorID'];
     $user = $_SESSION["user"];
   }
+  if (isset($_SESSION['doctorID'])){
+    $user = $_SESSION["user"];
+  }
   $login = $_SESSION["loginID"];
 
   if ($login == "doctor"){
