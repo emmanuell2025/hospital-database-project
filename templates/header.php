@@ -10,7 +10,8 @@
 
     if($login == "doctor") {
       $user = $_SESSION["user"];
-      $query = "SELECT doctor.drFName, doctor.drLName, doctor.drSpecialty, department.deptName FROM doctor, department WHERE doctor.drID = '$user' AND doctor.deptID = department.deptID;";
+      $query = "SELECT doctor.drFName, doctor.drLName, doctor.drSpecialty, department.deptName
+       FROM doctor, department WHERE doctor.drID = '$user' AND doctor.deptID = department.deptID;";
       echo "User number: " . $user . "<br>";
       $response = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($response);
@@ -19,7 +20,8 @@
     }
     elseif($login == "patient") {
       $mrn = $_SESSION['MRN'];
-      $query = "SELECT patient.pFName, patient.pLName, patient.pMRN, doctor.drFName, doctor.drLName FROM doctor, patient WHERE '$mrn' = patient.pMRN AND patient.drID = doctor.drID;";
+      $query = "SELECT patient.pFName, patient.pLName, patient.pMRN, doctor.drFName, doctor.drLName
+       FROM doctor, patient WHERE '$mrn' = patient.pMRN AND patient.drID = doctor.drID;";
       echo "MRN: " . $mrn . "<br>";
       $response = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($response);
@@ -50,6 +52,9 @@
     <div class="main-header">
       <a href="../logout.php" class="logout-button">Logout</a>
       <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
+    </div>
+    <div class=sidebar>
+      
     </div>
   </body>
 

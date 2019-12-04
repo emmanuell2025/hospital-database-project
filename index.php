@@ -7,13 +7,13 @@
 
     <ul>
       <li>
-        <a href="doctor/doctor_login.php"><strong>Doctor</strong></a> Login
+        <a href="doctor/doctor_login.php"><strong>Doctor Login</strong></a>
       </li>
       <li>
-        <a href="patient/patient_login.php"><strong>Patient</strong></a> Login
+        <a href="patient/patient_login.php"><strong>Patient Login</strong></a>
       </li>
       <li>
-        <a href="reception/reception_login.php"><strong>Reception</strong></a> Login
+        <a href="reception/reception_login.php"><strong>Reception Login</strong></a>
       </li>
     </ul>
 
