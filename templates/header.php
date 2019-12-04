@@ -5,6 +5,8 @@
   
   if (isset($_SESSION["loginID"])){
     require_once "../config.php";
+
+    $sidebar = '';
     
     $login = $_SESSION["loginID"];
 
@@ -14,8 +16,12 @@
        FROM doctor, department WHERE doctor.drID = '$user' AND doctor.deptID = department.deptID;";
       $responce = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($responce);
-      echo '<table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] . 
-      '</td> <td>User number: ' . $user . '</td> <td>Department: ' . $row["deptName"] . '</td> <td> Specialty: ' . $row["drSpecialty"] . '</td> </tr> </table>';
+      echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] . 
+      '</td> <td>User number: ' . $user . '</td> <td>Department: ' . $row["deptName"] . '</td> <td> Specialty: ' . $row["drSpecialty"]
+       . '</td> </tr> </table> </div>';
+      $sidebar = '<div class="sidebar">
+      <a href="../patient/patient_list.php">Patients</a>
+      </div>';
     }
     elseif($login == "patient") {
       $mrn = $_SESSION['MRN'];
@@ -23,21 +29,22 @@
        FROM doctor, patient WHERE '$mrn' = patient.pMRN AND patient.drID = doctor.drID;";
       $responce = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($responce);
-      echo "MRN: " . $mrn . "<br>";
-      echo "Patient Name: " . $row['pFName'] . ' ' . $row['pLName'] . '<br>';
-      echo "Doctor's Name: " . $row['drFName'] . ' ' . $row['drLName'];
+      echo '<div class="main-header"> <table> <tr class="profile-info"> <td>MRN: ' . $mrn .
+      '</td> <td>Patient Name: ' . $row['pFName'] . ' ' . $row['pLName'] . 
+      '</td> <td> Doctor\'s Name: ' . $row['drFName'] . ' ' . $row['drLName'] . '</td> </tr> </table> </div>';
     }
     elseif($login == "reception") {
       $user = $_SESSION["user"];
       $query = "SELECT receptID, receptDept FROM reception WHERE reception.receptID = '$user';";
       $responce = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($responce);
-      echo "User number: " . $user . "<br>Department: " . $row["receptDept"];
+      echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User number: ' . $user . '</td> <td>Department: '
+      . $row["receptDept"] . '</td> </tr> </table> </div>';
     }
-    echo '<div class="main-header">
-      <a href="../logout.php" class="logout-button">Logout</a>
-      <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
-    </div>';
+    // echo '<div class="main-header">
+    //   <a href="../logout.php" class="logout-button">Logout</a>
+    //   <!-- !!!!!!Change to "/logout.php" before presenting!!!!!! -->
+    // </div>';
   }
   else echo '
     <h1>Login Here</h1>
@@ -52,6 +59,7 @@
         <a href="reception/reception_login.php"><strong>Reception Login</strong></a>
       </li>
     </ul>';
+  echo $sidebar;
 
  ?>
 <!DOCTYPE html>

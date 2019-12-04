@@ -6,7 +6,7 @@
 
 .main-header {
     border-bottom: 2px solid black;
-    justify-content: right;
+    padding-bottom: 10px;
 }
 
 .pat-table-head {
@@ -57,6 +57,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding-bottom: 10px;
+    border-bottom: 2px solid black;
 }
 
 .contributors-container {
