@@ -40,7 +40,7 @@ AND prescription.pMRN = '$MRN'";
           $row['pLName'] . '</td> <td>';
         }
         echo $row['rxID'] . '</td> <td>' .
-        $row['medName'] . '</td>' .
+        $row['medName'] . '</td><td>' .
         $row['rxCost'] . '</td>';
         echo '</tr>';
         if ($tablerownum == "1") {
