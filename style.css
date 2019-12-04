@@ -5,46 +5,50 @@
 }
 
 .main-header {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid black;
     justify-content: right;
 }
 
 .pat-table-head {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    border-bottom: 1px solid blue;
+    border-bottom: 2px solid black;
 }
 
 .theader {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid black;
 }
 
 .pat-table-row0 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    background: lightgray;
+    background: rgb(87, 92, 94);
 }
 
 .pat-table-row1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    background: gray;
+    background: rgb(123, 132, 133);
 }
 
 .trow0 {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    background: lightgray;
+    background: rgb(87, 92, 94);
 }
 
 .trow1 {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    background: gray;
+    background: rgb(123, 132, 133);
 }
 
 .logout-button {
     margin-right: 50px;
+}
+
+a {
+    color: rgb(0, 171, 173);
 }

@@ -33,8 +33,8 @@ if(isset($_POST['submit'])){
   $foreignDisable = "SET FOREIGN_KEY_CHECKS=0";
   $foreignEnable = "SET FOREIGN_KEY_CHECKS=1";
   mysqli_query($dbc, $foreignDisable);
-  $responce = mysqli_query($dbc, $query);
-  if ($responce){
+  $response = mysqli_query($dbc, $query);
+  if ($response){
     echo "Appointment Created Successfully";
     header("Refresh:3;url=../patient/appointments.php");
   }

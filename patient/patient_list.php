@@ -19,18 +19,18 @@
     echo '<a href="../patient/appointments.php">Appointments</a>';
     $query = "SELECT pMRN, pFName, pLName, pPhone, pAge from patient";
   }
-  $responce = mysqli_query($dbc, $query);
+  $response = mysqli_query($dbc, $query);
 
   $tablerownum = "1";
 
-  if ($responce){
+  if ($response){
     echo '<table> <tr class="pat-table-head">
     <td>MRN</td>
     <td>First Name</td>
     <td>Last Name</td>
     <td>Phone Number</td>
     <td>Age</td></tr>';
-      while ($row = mysqli_fetch_array($responce)){
+      while ($row = mysqli_fetch_array($response)){
         echo '<tr class="pat-table-row' . $tablerownum . '"> <td>' .
         $row['pMRN'] . '</td> <td>' .
         $row['pFName'] . '</td> <td>' .

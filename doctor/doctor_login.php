@@ -5,12 +5,12 @@ include "../templates/header.php";
 require_once "../config.php";
 
 $query = "SELECT drID from doctor";
-$responce = mysqli_query($dbc, $query);
+$response = mysqli_query($dbc, $query);
 
 $_SESSION["loginID"] = "doctor";
 
-if ($responce){
-  while($row = mysqli_fetch_array($responce)) {
+if ($response){
+  while($row = mysqli_fetch_array($response)) {
     echo $row['drID'] . "\n";
 }}
 else{

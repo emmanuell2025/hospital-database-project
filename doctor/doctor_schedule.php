@@ -6,9 +6,9 @@
   $user = $_SESSION["user"];
   echo $user . "<br>";
   $query = "SELECT patient.pMRN, patient.pFName, patient.pLName, apID, apDesc, appointment.procID, roomNum, apDate, DATE_FORMAT(`appointment`.`apTime`,'%h:%i %p') FROM appointment, doctor, patient WHERE patient.pMRN = appointment.pMRN AND patient.procID = appointment.procID AND doctor.DeptID = appointment.DeptID AND doctor.drID = '$user'";
-  $responce = mysqli_query($dbc, $query);
+  $response = mysqli_query($dbc, $query);
 
-  if ($responce){
+  if ($response){
     echo '<table><tr class="theader">
     <td>Appointment ID</td>
     <td>Description</td>
@@ -21,7 +21,7 @@
     <td>Patient Last Name</td>
     </tr>';
     $tablerownum = "1";
-      while ($row = mysqli_fetch_array($responce)){
+      while ($row = mysqli_fetch_array($response)){
         echo '<tr class="trow' . $tablerownum .'"> <td>' .
         $row['apID'] . '</td> <td>' .
         $row['apDesc'] . '</td> <td>' .
