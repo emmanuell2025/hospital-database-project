@@ -29,14 +29,14 @@ if (isset($_POST['submit'])){
     <h1>Select An Account</h1>
 
     <ul>
-      <li>
-        <form class="login" action="../patient/patient_list.php" method="POST">
+      <li class="login">
+        <form action="../login.php" method="POST">
           <label for="doctorID">Reception ID</label>
-          <input type="text" name="doctorID">
+          <input type="text" name="receptionID">
           <input type="submit" name="submit" value="Submit">
         </form>
       </li>
     </ul>
+    </div>
   </body>
 </html>
-<?php include "../templates/footer.php"; ?>

@@ -3,25 +3,18 @@
 
   require_once "../config.php";
 
-  if (isset($_POST['MRN'])){
-    $_SESSION["MRN"]=$_POST['MRN'];
-  }
-  $_SESSION["user"]= "patient";
 
-  if (isset($_POST["MRN"])){
-    $MRN = $_POST["MRN"];
-  }
-  else if (isset($_GET["MRN"])){
+  if (isset($_GET["MRN"])){
     $MRN = $_GET["MRN"];
+  }
+  else if (isset($_SESSION["MRN"])){
+    $MRN = $_SESSION["MRN"];
   }
   else {
     echo "Error MRN Not Set";
   }
   $query = "SELECT * from patient where pMRN = '$MRN'";
   $responce = mysqli_query($dbc, $query);
-
-  echo '<a href="./appointments.php">Appointments</a>';
-  echo '<a href="./prescriptions.php">Prescriptions</a>';
 
   if ($responce){
     while($row = mysqli_fetch_array($responce)) {
@@ -42,4 +35,5 @@
   }
 
   mysqli_close($dbc);
+  echo '</div>';
  ?>

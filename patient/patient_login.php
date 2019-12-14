@@ -18,9 +18,7 @@ else{
 
 mysqli_close($dbc);
 
-if (!isset($_SESSION["loginID"])) {
-  $_SESSION["loginID"]="patient";
-}
+
 
 if (isset($_POST['submit'])){
   $_SESSION["MRN"]=$_POST['MRN'];
@@ -30,14 +28,14 @@ if (isset($_POST['submit'])){
     <h1>Select An Account</h1>
 
     <ul>
-      <li>
-        <form class="login" action="../patient/patient_data.php" method="POST">
+      <li class="login">
+        <form action="../login.php" method="POST">
           <label for="MRN">Patient MRN</label>
           <input type="text" name="MRN">
           <input type="submit" name="submit" value="Submit">
         </form>
       </li>
     </ul>
+    </div>
   </body>
 </html>
-<?php include "../templates/footer.php"; ?>

@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
   mysqli_close($dbc);
 }
 
- ?>
+?>
 
 <body>
   <form action="#" method="post">
@@ -59,4 +59,5 @@ if(isset($_POST['submit'])){
     <input type="submit" name="submit" value="submit">
 
   </form>
+</div>
 </body>
