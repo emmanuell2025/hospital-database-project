@@ -1,11 +1,11 @@
 <?php
   session_start();
-  
+
   $sidebar = '';
   if (isset($_SESSION["loginID"])){
     require_once "../config.php";
 
-    
+
     $login = $_SESSION["loginID"];
 
     if($login == "doctor") {
@@ -14,7 +14,7 @@
        FROM doctor, department WHERE doctor.drID = '$user' AND doctor.deptID = department.deptID;";
       $responce = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($responce);
-      echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] . 
+      echo '<div class="main-header"> <table> <tr class="profile-info"> <td>User: ' . $row["drFName"] . ' ' . $row["drLName"] .
       '</td> <td>User number: ' . $user . '</td> <td>Department: ' . $row["deptName"] . '</td> <td> Specialty: ' . $row["drSpecialty"]
        . '</td> </tr> </table> </div>';
        $sidebar = '<div class="sidebar">
@@ -30,7 +30,7 @@
       $responce = mysqli_query($dbc, $query);
       $row = mysqli_fetch_array($responce);
       echo '<div class="main-header"> <table> <tr class="profile-info"> <td>MRN: ' . $mrn .
-      '</td> <td>Patient Name: ' . $row['pFName'] . ' ' . $row['pLName'] . 
+      '</td> <td>Patient Name: ' . $row['pFName'] . ' ' . $row['pLName'] .
       '</td> <td> Doctor\'s Name: ' . $row['drFName'] . ' ' . $row['drLName'] . '</td> </tr> </table> </div>';
       $sidebar = '<div class="sidebar">
       <a href="../patient/patient_data.php">Patient Info</a>
@@ -67,7 +67,7 @@
         <a href="reception/reception_login.php"><strong>Reception Login</strong></a>
       </li>
     </ul> <div class="main-content-loggedout">';
-    
+
   echo $sidebar;
 
  ?>
